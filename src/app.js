@@ -5,11 +5,16 @@ import mongoose from 'mongoose';
 import __dirname from './utils.js';
 import { engine } from 'express-handlebars';
 
+
 // ROUTES IMPORT
+
+import movieRoutes from './routes/movies.routes.js';
+
 
 
 
  
+
 
 
 
@@ -27,6 +32,7 @@ app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
 
+app.use(movieRoutes);
 
 
 
