@@ -22,7 +22,6 @@ class MoviesManager {
             const APIKEY = process.env.API_KEY; 
             const data =fetch(`${APIKEY}`)
             .then(response => response.json())
-            console.log(data)
             return data
         } catch (error) {
             this.status = -1;

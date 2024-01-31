@@ -33,12 +33,13 @@ export const addMovie = async (req, res) => {
 
 export const goToMovieList = async (req, res) => {
     try {
+        const finalArray = [];
         const data = await manager.getMovies()
-        .then(res.render('movielist', {movies: data.results[0]}))
-/*         const dataRes = data.results
-        const test = dataRes[0] */
-        console.log(test)
-        res.render('movielist', {movies: test})
+        const dataRes = data.results
+        dataRes.forEach(element => {
+            finalArray.push(element.title)
+        });
+        res.render('movielist', {movies: dataRes})
     } catch (error) {
         res.status(500).send({status: 'EM', error: error});
     }

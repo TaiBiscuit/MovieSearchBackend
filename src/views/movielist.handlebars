@@ -1,7 +1,9 @@
 <div>
     <h1>Full movies list</h1>
-    <li>{{mvoies.original_title}}</li>
-{{!--     {{#each movies}}
-    <li>{{movies.original_title}}</li>
-    {{/each}} --}}
+{{!--     <li>{{movies}}</li> --}}
+    {{#each movies}}
+    {{#unless movies.title}}
+    <li>{{this.title}}</li>
+    {{/unless}}
+    {{/each}} 
 </div> 
