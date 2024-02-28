@@ -1,9 +1,15 @@
 <div>
-    <h1>Full movies list</h1>
-{{!--     <li>{{movies}}</li> --}}
-    {{#each movies}}
-    {{#unless movies.title}}
-    <li>{{this.title}}</li>
-    {{/unless}}
-    {{/each}} 
+    <h1>Check all the movies</h1>
+    <button><a href="/">Go back Home</a></button>
+    <div class="full-movies-container">
+        {{#each movies}}
+        <a href="/movie/{{this.id}}">
+        <div class="movie-container">
+            <img src="https://image.tmdb.org/t/p/w500{{this.poster_path}}" alt="" class="movie-small-img">
+            <h1 class="movie-title">{{this.title}}</h1>
+            <h1 class="movie-title">{{this.name}}</h1>
+        </div>
+        </a>
+        {{/each}} 
+        </div>
 </div> 
