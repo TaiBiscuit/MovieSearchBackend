@@ -28,6 +28,26 @@ class MoviesManager {
             console.log(err)
         }   
     }
+
+    getMovieById = async() => {
+        try {
+            const APIKEY = process.env.API;
+            const options = {
+                method: 'GET',
+                headers: {
+                  accept: 'application/json',
+                  Authorization: `Bearer ${APIKEY}`
+                }
+              };
+            const data = fetch('https://api.themoviedb.org/3/movie/movie_id?language=en-US', options)
+              .then(response => response.json())
+              .then(response => console.log(response))
+            return data
+        } catch (error) {
+            this.status = -1;
+            console.log(error)
+        }
+    }
 }
 
 export default MoviesManager
