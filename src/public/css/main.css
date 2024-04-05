@@ -88,3 +88,22 @@ body{
     display: flex;
     color: white;
 }
+
+
+
+
+/* MOVIE BY ID */
+
+
+.movie-id-container{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    align-items: center;
+    justify-content:space-around;
+}
+
+.right p{
+    word-wrap: break-word;
+    width: 450px;
+}

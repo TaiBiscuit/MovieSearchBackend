@@ -29,20 +29,20 @@ class MoviesManager {
         }   
     }
 
-    getMovieById = async() => {
+    getMovieById = async(movieId) => {
         try {
-            const APIKEY = process.env.API;
+            const APIKEY = process.env.API_ID
             const options = {
                 method: 'GET',
                 headers: {
                   accept: 'application/json',
                   Authorization: `Bearer ${APIKEY}`
                 }
-              };
-            const data = fetch('https://api.themoviedb.org/3/movie/movie_id?language=en-US', options)
-              .then(response => response.json())
-              .then(response => console.log(response))
+            };
+            const data = fetch(`https://api.themoviedb.org/3/movie/${movieId.id}?language=en-US`, options)
+            .then(response => response.json())
             return data
+
         } catch (error) {
             this.status = -1;
             console.log(error)

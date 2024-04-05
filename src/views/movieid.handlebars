@@ -1,4 +1,14 @@
-<div class="home-container">
-    <h1>BBB</h1>
-    <button><a href="/fullmovies">Go to Full Movies</a></button>
+
+<div class="movie-id-container">
+    <div class="left">
+        <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="" class="movie-small-img">
+    </div>
+    <div class="right">
+        <h1>{{movie.original_title}}</h1>
+        <p>{{movie.overview}}</p>
+        <p>Budget= {{movie.budget}}</p>
+        <p>Revenue= {{movie.revenue}}</p>
+        
+    </div>
 </div>
+<button><a href="/fullmovies">Go to Full Movies</a></button>
