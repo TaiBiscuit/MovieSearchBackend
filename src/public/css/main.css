@@ -84,7 +84,7 @@ body{
 /* HOME */
 
 
-.home-container{
+.home-container, .container{
     display: flex;
     color: white;
 }

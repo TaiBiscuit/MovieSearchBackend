@@ -19,8 +19,15 @@ class MoviesManager {
 
     getMovies = async() => {
         try {
-            const APIKEY = process.env.API_KEY; 
-            const data =fetch(`${APIKEY}`)
+            const APIKEY = process.env.API_ID; 
+            const options = {
+                method: 'GET',
+                headers: {
+                  accept: 'application/json',
+                  Authorization: `Bearer ${APIKEY}`
+                }
+              };
+            const data =fetch(`https://api.themoviedb.org/3/trending/movie/day?language=en-US`, options)
             .then(response => response.json())
             return data
         } catch (error) {

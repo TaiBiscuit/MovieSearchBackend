@@ -9,7 +9,7 @@ import { engine } from 'express-handlebars';
 // ROUTES IMPORT
 
 import movieRoutes from './routes/movies.routes.js';
-
+import userRoutes from './routes/user.routes.js';
 
 
 
@@ -33,6 +33,7 @@ app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
 
 app.use(movieRoutes);
+app.use(userRoutes);
 
 
 

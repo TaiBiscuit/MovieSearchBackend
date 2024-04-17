@@ -8,14 +8,6 @@ const manager = new MoviesManager;
 
 /* CRUD */
 
-export const getMovies = async (req, res) => {
-    try {
-        res.render('home', {layout: 'main'})
-    } catch (error) {
-        res.status(500).send({status: 'EM', error: err});
-    }
-}
-
 export const getMovieWithId = async (req, res) => {
     try {
         const movieId = req.params;
