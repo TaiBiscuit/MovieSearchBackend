@@ -1,4 +1,23 @@
-<div class="home-container">
-    <h1>AAA</h1>
-    <button><a href="/fullmovies">Go to Full Movies</a></button>
+<div class="section-container">
+    <div class="header-movie">
+        <div class="left">
+            <img src="https://image.tmdb.org/t/p/w500{{movies.[0].poster_path}}" alt="" class="header-img">
+        </div>
+        <div class="right">
+            <h1 class="movie-title">{{movies.[0].title}}</h1>
+            <p class="movie-overview">{{movies.[0].overview}}</p>
+            <p class="movie-date">{{movies.[0].release_date}}</p>
+        </div>
+    </div>
+    <div class="movies-container">
+        {{#each movies}}
+        <a href="/movie/{{this.id}}">
+        <div class="movie-box">
+            <img src="https://image.tmdb.org/t/p/w500{{this.poster_path}}" alt="" class="movie-small-img">
+            <h1 class="movie-title">{{this.title}}</h1>
+            <p class="movie-date">{{this.release_date}}</p>
+        </div>
+        </a>
+        {{/each}} 
+    </div>
 </div>

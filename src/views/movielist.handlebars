@@ -1,15 +1,17 @@
 <div>
-    <h1>Check all the movies</h1>
-    <button><a href="/">Go back Home</a></button>
-    <div class="full-movies-container">
-        {{#each movies}}
-        <a href="/movie/{{this.id}}">
-        <div class="movie-container">
-            <img src="https://image.tmdb.org/t/p/w500{{this.poster_path}}" alt="" class="movie-small-img">
-            <h1 class="movie-title">{{this.title}}</h1>
-            <p class="movie-date">{{this.release_date}}</p>
+    <div class="section-container">
+        <button><a href="/">Go back Home</a></button>
+        <div class="movies-container">
+            {{#each movies}}
+            <a href="/movie/{{this.id}}">
+            <div class="movie-box">
+                <img src="https://image.tmdb.org/t/p/w500{{this.poster_path}}" alt="" class="movie-small-img">
+                <h1 class="movie-title">{{this.title}}</h1>
+                <p class="movie-date">{{this.release_date}}</p>
+            </div>
+            </a>
+            {{/each}} 
         </div>
-        </a>
-        {{/each}} 
-        </div>
+    </div>
+
 </div> 

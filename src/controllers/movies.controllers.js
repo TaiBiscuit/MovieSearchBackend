@@ -42,9 +42,20 @@ export const addMovie = async (req, res) => {
 
 /* VIEWENDPOINTS */
 
-export const goToMovieList = async (req, res) => {
+export const frontMovies = async (req, res) => {
     try {
         const data = await manager.getMovies()
+/*         console.log(data.results[0].overview) */
+        const dataRes = data.results
+        res.render('home', {movies: dataRes})
+    } catch (error) {
+        res.status(500).send({status: 'EM', error: error});
+    }
+}
+
+export const goToMovieList = async (req, res) => {
+    try {
+        const data = await manager.getAllMovies()
         const dataRes = data.results
         res.render('movielist', {movies: dataRes})
     } catch (error) {
